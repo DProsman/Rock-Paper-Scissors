@@ -33,14 +33,21 @@ public class Main {
 
         determineWinner(playerChoice, computerChoice);
     }
+
+    //choose a winner using else if statements
     public static void determineWinner(int computerChoice, int playerChoice) {
+        //defining the tie
         if (playerChoice == computerChoice) {
             System.out.println("This is a tie!");
-        } else if ((playerChoice == 0 && computerChoice == 2) ||
+        }
+        // defining if the player wins
+        else if ((playerChoice == 0 && computerChoice == 2) ||
                 (playerChoice == 0 && computerChoice == 1) ||
                 (playerChoice == 2 && computerChoice == 1)) {
             System.out.println("Player wins!");
-        } else {
+        }
+        // defining the computer wins
+        else {
             System.out.println("Computer wins!");
         }
     }
