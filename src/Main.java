@@ -2,20 +2,21 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Rock = 0");
-        System.out.println("Paper = 1");
-        System.out.println("Scissor = 2");
 
         //scan the input of the user
         Scanner scanner = new Scanner(System.in);
 
-        final int Rock = 0;
-        final int Paper = 1;
-        final int Scissors = 2;
         String[] choices = {"Rock", "Paper", "Scissors"};
 
         //let the player choose a number from 0 to 2
-        System.out.println("Choose: 0, 1, 2");
+        System.out.println("Choose:\n0 (Rock)\n1 (Paper)\n2 (Scissors)");
+
+        // check of invoer een geheel getal is
+        if (!scanner.hasNextInt()) {
+            System.out.println("Invalid input! Please enter a number: 0 (Rock), 1 (Paper), or 2 (Scissors).");
+            return;
+        }
+
         int playerChoice = scanner.nextInt();
 
         //validate player input
@@ -28,8 +29,8 @@ public class Main {
         int computerChoice = (int) (Math.random() * 3);
 
         //print out both player and computer inputs
-        System.out.println("Your choice: " + playerChoice);
-        System.out.println("Computer Choice: " + computerChoice);
+        System.out.println("Your choice: " + choices[playerChoice]);
+        System.out.println("Computer Choice: " + choices[computerChoice]);
 
         determineWinner(computerChoice, playerChoice);
     }
