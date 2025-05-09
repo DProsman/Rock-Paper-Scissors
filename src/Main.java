@@ -31,7 +31,7 @@ public class Main {
         System.out.println("Your choice: " + playerChoice);
         System.out.println("Computer Choice: " + computerChoice);
 
-        determineWinner(playerChoice, computerChoice);
+        determineWinner(computerChoice, playerChoice);
     }
 
     //choose a winner using else if statements
@@ -42,7 +42,7 @@ public class Main {
         }
         // defining if the player wins
         else if ((playerChoice == 0 && computerChoice == 2) ||
-                (playerChoice == 0 && computerChoice == 1) ||
+                (playerChoice == 1 && computerChoice == 0) ||
                 (playerChoice == 2 && computerChoice == 1)) {
             System.out.println("Player wins!");
         }
